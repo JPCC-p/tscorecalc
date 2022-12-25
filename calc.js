@@ -11,9 +11,7 @@ function tscore(arr) {
     let stdev = Math.sqrt(sdev.reduce((a,b)=>a+b)/arr.length); // standard deviation
     let tscore = [];
     for (let elm of dev) {
-        tscore.push(elm*10/stdev+50)
+        tscore.push(elm*10/stdev+50);
     }
-    return tscore;
+    return {data:arr,tscore:tscore,dev:dev,sdev:sdev,stdev:stdev,avr:avr};
 }
-
-exports.tscore = tscore;
