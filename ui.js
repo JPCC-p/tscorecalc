@@ -6,6 +6,7 @@ window.onload = update;
 
 function update() {
     let text = document.getElementById("inputtext").value;
+    reserror.innerText = "";
     let data = getdata(text);
     if (data==false) {
         let table1 = document.getElementById("resulttable1");
