@@ -45,7 +45,7 @@ function showresult(data) {
     let table2 = document.getElementById("resulttable2");
     table1.innerHTML = "";table2.innerHTML = "";
     // table1
-    let table1conf = [["average",data.avr],["squared deviation",data.stdev],["variance",Math.sqrt(data.stdev)]];
+    let table1conf = [["average",data.avr],["squared deviation",data.stdev],["variance",data.stdev**2]];
     for (let elm of table1conf) {
         let tr = document.createElement("tr");
         let td1 = document.createElement("td");
