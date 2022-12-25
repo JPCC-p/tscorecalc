@@ -1,4 +1,5 @@
 var input = document.getElementById("inputtext");
+let reserror = document.getElementById("resulterror");
 input.onchange = update;
 input.onkeyup = update;
 window.onload = update;
@@ -18,6 +19,7 @@ function update() {
 function getdata(text) {
     if (text.length==0) {
         console.error("No data");
+        reserror.innerText = "No data";
         return false;
     }
     let tarr = text.split(",");
@@ -25,10 +27,12 @@ function getdata(text) {
     for (let elm of tarr) {
         if (elm=="") {
             console.warn("null cell is there");
+            reserror.innerText = "null cell is there";
             continue;
         }
         if (isNaN(Number(elm))) {
             console.error("NaN is there");
+            reserror.innerText = "NaN is there";
             return false;
         }
         narr.push(Number(elm));
